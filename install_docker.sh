@@ -8,7 +8,7 @@ apt-get update
 apt-get install -y build-essential golang ethereum eth
 
 #Finalisation de l'installation et initialistation de la blockchain
-cd ~
+cd /
 git clone https://github.com/vttotor98/genesis_files/
 chmod 755 genesis_files/ether.sh
 genesis_files/ether.sh
