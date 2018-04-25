@@ -5,5 +5,5 @@
 echo "Comment vous voulez appeller ce noeud ?"
 read node_name
 
-#initialisation du noeud
+#Initialisation du noeud
 geth --identity node_name init ~/blockchain/genesis_folder/firstGenesis.json --datadir ~/blockchain/.ethereum_private/AgaetisChain
