@@ -2,7 +2,7 @@
 #Author Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
 #Démarage du premier noeuds, vérifier les paramètres
-$file=./.param_blch
+$file=.param_blch
 #Est-ce que le fichier de paramètre existe, et est-il vide
 if [ ! -s $file] then
   #Comme il n'existe pas de fichier de paramètrage 
@@ -33,6 +33,7 @@ fi
 
 geth --identity $node_name init /blockchain/genesis_folder/genesis.json --datadir /blockchain/.ethereum_private/AgaetisChain
 
+#Si nous voulons placer en paramètres des options ou commande, c'est possible grâce au if
 if [ $# -gt 1 ] then
   geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet $@
 else
