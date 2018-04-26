@@ -1,3 +1,4 @@
+
 #!/bin/bash
 #Author Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
@@ -26,8 +27,8 @@ else
     i=`expr $i + 1`
   done < .param_blch
 
-  node_name=tab[0]
-  idnet=tab[1]
+  node_name=${tab[0]}
+  idnet=${tab[1]}
 
 fi
 
@@ -37,5 +38,5 @@ geth --identity $node_name init /blockchain/genesis_folder/genesis.json --datadi
 if [ $# -gt 0 ]; then
   geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet $@
 else
-  geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet &
+  geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet console
 fi
