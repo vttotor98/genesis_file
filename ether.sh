@@ -14,6 +14,6 @@ read node_name
 #Création du fichier start :
 touch /blockchain/start.sh
 cd /blockchain
-echo "geth --identity $node_name init /blockchain/genesis_folder/firstGenesis.json --datadir /blockchain/.ethereum_private/ACPrivateChain" >start.sh
+echo "geth --identity "$node_name" init /blockchain/genesis_folder/firstGenesis.json --datadir /blockchain/.ethereum_private/ACPrivateChain" >start.sh
 echo "geth --datadir ~/blockchain/.ethereum_private/ACPrivateChain --networkid 988" >>start.sh 
 
