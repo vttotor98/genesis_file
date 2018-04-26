@@ -1,5 +1,5 @@
 #!/bin/bash
-#Author Victor TIREBAQUE for Agaetis Clermont-Ferrand
+# Author Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
 #Démarage du premier noeuds, vérifier les paramètres
 $file=./.param_blch
