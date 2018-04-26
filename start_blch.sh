@@ -36,5 +36,5 @@ geth --identity $node_name init /blockchain/genesis_folder/genesis.json --datadi
 if [ $# -gt 1 ] then
   geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet $@
 else
- geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet &
+  geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet &
 fi
