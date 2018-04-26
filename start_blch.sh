@@ -4,7 +4,7 @@
 #Démarage du premier noeuds, vérifier les paramètres
 $file=.param_blch
 #Est-ce que le fichier de paramètre existe, et est-il vide
-if [ ! -s $file] then
+if [ ! -s $file]; then
   #Comme il n'existe pas de fichier de paramètrage 
   #Nous le créons en demandant les paramètres à l'utilisateur
   echo "Comment vous voulez appeller ce noeud ?"
@@ -34,7 +34,7 @@ fi
 geth --identity $node_name init /blockchain/genesis_folder/genesis.json --datadir /blockchain/.ethereum_private/AgaetisChain
 
 #Si nous voulons placer en paramètres des options ou commande, c'est possible grâce au if
-if [ $# -gt 1 ] then
+if [ $# -gt 1 ]; then
   geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet $@
 else
   geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet &
