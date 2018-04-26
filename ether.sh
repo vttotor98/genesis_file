@@ -10,5 +10,9 @@ geth --datadir /blockchain/.ethereum_private init ~/blockchain/genesis_folder/fi
 #Démarage du premier noeuds, vérifier les paramètres 
 echo "Comment vous voulez appeller ce noeud ?"
 read node_name
-geth --identity $node_name init /blockchain/genesis_folder/firstGenesis.json --datadir /blockchain/.ethereum_private/ACPrivateChain
-echo “pour quitter faire Ctrl + C”
+
+#Création du fichier start :
+touch /blockchain/start.sh
+echo "geth --identity $node_name init /blockchain/genesis_folder/firstGenesis.json --datadir /blockchain/.ethereum_private/ACPrivateChain" >start.sh
+echo "geth --datadir ~/blockchain/.ethereum_private/ACPrivateChain --networkid 988" >>start.sh 
+
