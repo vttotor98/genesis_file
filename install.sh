@@ -8,4 +8,4 @@ sudo apt-get update
 sudo apt-get install -y build-essential golang software-properties-common ethereum eth
 
 #Finalisation de l'installation et initialistation de la blockchain
-./ether.sh
+genesis_files/ether.sh
