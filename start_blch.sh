@@ -33,4 +33,5 @@ else
 fi
 
 geth --identity $node_name init /blockchain/genesis_folder/genesis.json --datadir /blockchain/.ethereum_private/AgaetisChain
-geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet 
+nohup geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet  --nodiscover &>geth.log &
+chmod +r geth.log
