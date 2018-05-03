@@ -7,7 +7,7 @@ fichier=.param_blch
 #Est-ce que le fichier de paramètre existe, et est-il vide
 if [ ! -s $fichier ]; then
   #Comme il n'existe pas de fichier de paramètrage
-  #Nous le créons en demandant les paramètres ▒|  l'utilisateur
+  #Nous le créons en demandant les paramètres à l'utilisateur
   echo "Comment vous voulez appeller ce noeud ?"
   read node_name
   echo "Quel sera l'idnetwork ?"
@@ -22,6 +22,7 @@ else
   #Comme il existe nous récupérons les données
   declare -a tab
   i=0
+  #Lecture dans le fichier .param_blch
   while IFS='' read -r line || [[ -n "$line" ]]; do
     tab[i]=$line
     i=`expr $i + 1`
@@ -32,6 +33,10 @@ else
 
 fi
 
+
+#Initialisation de démarrage
 geth --identity $node_name init /blockchain/genesis_folder/genesis.json --datadir /blockchain/.ethereum_private/AgaetisChain
-nohup geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet  --nodiscover &>geth.log &
+#Exécution et redirection du fichier nohup.out dans geth.log
+nohup geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet  --nodiscover &>>geth.log &
+#Don des droits en lecture
 chmod +r geth.log
