@@ -7,4 +7,11 @@ mv /genesis_files/genesis.json /blockchain/genesis_folder/
 #Lors de l'exécution de la commande attention à l'id de la blockchain
 geth --datadir /blockchain/.ethereum_private init /blockchain/genesis_folder/genesis.json 
 
-echo "Exécuter start_blch.sh pour démarrer la blockchain"
+#Déplacement des fichiers d'exécution dans blockchain
+mv /genesis_files/order.sh /blockchain
+mv /genesis_files/start_blch.sh /blockchain
+
+chmod +x /blockchain/*.sh
+
+echo "Exécuter start_blch.sh pour démarrer la blockchain dans blockchain"
+echo "Vous pouvez supprimer le dossier genesis_files"
