@@ -13,6 +13,6 @@ else
   file_name=$file_name".js"
 
   output="$outputOutput"
-  echo "var $output=`solc --optimize --combined-json abi,bin,interface $1`" > $file_name
+  echo "var $output=`solc --optimize --gas --combined-json abi,bin,interface $1`" > $file_name
   
 fi
