@@ -2,9 +2,13 @@
 #Author Victor TIREBAQUE for Agaetis
   
   #Aide
-if [ $1 = "help" ]; then 
+if [ $1 = "help" ] || [ $1 = "" ]; then 
   echo "Il faut mettre le nom du fichier du contrat en argument, et vous obtenez le fichier compiler dans un fichier .js"
 else
+  #Prérequis
+ #$func_file="/blockchain/functions/functions.js"
+ #~/order.sh "loadScript('/home/ether/blockchain/functions/functions.js');
+  
   #La chaîne de caractère qui est le nom du fichier monFichier.sol devient monfichier.js
   fct=$1
   fct=`echo ${fct%%.*}`
@@ -22,23 +26,21 @@ else
   abic=$fct"Abi"
   binc=$fct"BinCode"
   
-  reqst="var $abic = $output.contracts['$1:$fct'].abi"
-# reqst="var $abic = $abi" 
-# reqst=$reqst'"'$abi'"'
-# ./order.sh $reqst
 
-  fncontr=$fct"Contract = eth.contract(JSON.parse("$abic"))"
-# ./order.sh $fncontr
+  #Choix du compte à partir duquel nous déployons le contrat
+  ~/order.sh "loadScript('/home/ether/blockchain/functions/functions.js');checkAllBalances();"
+  echo "Quel est le compte à partir duquel vous voulez déployer le contrat ?"
+  read $account
+  echo -n "Veuillez entrer le mot-de-passe :"
+  read -s password
+  echo
 
-  rqstbin='var $binc = "0x" + $output.contracts['$1:$fct'].bin'
-# rqstbin='var $binc = $bin'
-# rqstbin=$rqstbin'"'$bin'"'
-# ./order.sh $rqstbin
-  
-  var account = web3.eth.accounts[0];                                                          
-  var addContract = web3.eth.contract(<content/of/ABI>);                                         
-  var binary = '0x<content/of/binary>';                                                          
-  var estimatedGas = web3.eth.estimateGas({data: binary});                                       
-  var addContractInstance = addContract.new({data: binary, from: myAccount, gas: estimatedGas}); 
+  #Dépoiement du contrat
+  ~/order.sh "var myAccount = web3.eth.accounts["$account"];
+  web3.personal.unlockAccount(myAccount,"$password", 10000);
+  var addContract = web3.eth.contract("$abi");"                                         
+  #"var binary = '0x"<content/of/binary>"';"                                                          
+  #"var estimatedGas = web3.eth.estimateGas({data: binary});"                                       
+  #"var addContractInstance = addContract.new({data: binary, from: myAccount, gas: estimatedGas});"
   
 fi
