@@ -36,7 +36,7 @@ fi
 
 #Initialisation de démarrage et redirection du fichier nohup.out dans geth.log
 geth --identity $node_name init ~/blockchain/genesis_folder/genesis.json --datadir ~/blockchain/.ethereum_private/AgaetisChain
-nohup geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet --nodiscover &>>geth.log &
+nohup geth --datadir ~/blockchain/.ethereum_private/AgaetisChain --networkid $idnet --nodiscover &>>/geth.log &
 
 
 #Don des droits en lecture
