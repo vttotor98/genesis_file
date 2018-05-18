@@ -2,7 +2,7 @@
 #Author Victor TIREBAQUE for Agaetis
 
 home=$HOME
-depl="$home/blockchain/functions/deploy"
+depl="/blockchain/functions/deploy"
 
 function ins_depl() {
   echo $1 >> $depl
