@@ -26,8 +26,10 @@ read x
 case $x in
 	0)
 		func=${f[$x]}"()"
+		file=$home$doss${f[$x]}".js"
 		;;
 	1)
+		file=$home$doss${f[$x]}
 		./functions/accounts.sh > ret
 		echo ret
 		t[0]="eth.accounts[${ret[0]}]"
@@ -48,6 +50,6 @@ esac
 if [ $x = $err ]; then
 	echo $func
 else
-	file=${f[$x]}".js"
 	echo $func
 	#~/order.sh "loadScript('"$home$doss$file"');"$func";"
+fi
