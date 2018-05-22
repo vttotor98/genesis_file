@@ -13,6 +13,7 @@ f[0]="checkAllBalances"
 f[1]="make_transaction"
 f[2]="addAccount"
 
+#Choix en fonction du fait que ce soit exécuter en script ou par un utilisateur
 if [ $# -eq 0 ]; then 
 	echo "Quel fonction voulez-vous exécuter ?"
 	for i in ${!f[*]}  
@@ -27,8 +28,8 @@ fi
 
 case $x in
 	0)
-		func=${f[$x]}"()"
-		file=$home$doss${f[$x]}".js"
+		#func=${f[$x]}"()"
+		file="./functions/accounts.sh"
 		;;
 	1)
 		file=$home$doss${f[$x]}".js"
