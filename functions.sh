@@ -13,15 +13,17 @@ f[0]="checkAllBalances"
 f[1]="make_transaction"
 f[2]="addAccount"
 
-
-echo "Quel fonction voulez-vous exécuter ?"
-for i in ${!f[*]}  
-do
-	echo -n " $i : ${f[$i]},"
-done
-echo
-read x
-
+if [ $# -eq 1 ]; then 
+	echo "Quel fonction voulez-vous exécuter ?"
+	for i in ${!f[*]}  
+		do
+		echo -n " $i : ${f[$i]},"
+	done
+	echo
+	read x
+else
+	x=$1
+fi
 
 case $x in
 	0)
@@ -52,5 +54,5 @@ if [ $x = $err ]; then
 else
 	#file=$home$doss${f[$x]}".js"
 	echo $func
-	#~/order.sh "loadScript('"$home$doss$file"');"$func";"
+	#~/order.sh "loadScript('"$file"');"$func";"
 fi
