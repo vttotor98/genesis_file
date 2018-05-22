@@ -54,6 +54,11 @@ if [ $x = $err ]; then
 	echo $func
 else
 	#file=$home$doss${f[$x]}".js"
-	echo $func
-	#~/order.sh "loadScript('"$file"');"$func";"
+	if [[ $func =~ [*.js] ]]; then
+		echo $func
+		#~/order.sh "loadScript('"$file"');"$func";"
+	else
+		#func finit par .sh
+		$func
+	fi
 fi
