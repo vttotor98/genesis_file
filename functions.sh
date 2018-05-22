@@ -13,7 +13,7 @@ f[0]="checkAllBalances"
 f[1]="make_transaction"
 f[2]="addAccount"
 
-if [ $# -eq 1 ]; then 
+if [ $# -eq 0 ]; then 
 	echo "Quel fonction voulez-vous exécuter ?"
 	for i in ${!f[*]}  
 		do
