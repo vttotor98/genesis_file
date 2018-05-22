@@ -30,11 +30,10 @@ fi
 case $x in
 	0)
 		#func=${f[$x]}"()"
-		file="./functions/accounts.sh"
+		file="./functions/checkAllBalances.sh"
 		;;
 	1)
-		file=$home$doss${f[$x]}".js"
-		./functions/accounts.sh
+		file="./functions/${f[$x]}.sh"
 		#echo ret
 		#t[0]="eth.accounts[${ret[0]}]"
 		#t[1]="eth.accounts[${ret[1]}]"
