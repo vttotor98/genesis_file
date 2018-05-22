@@ -26,6 +26,7 @@ else
 	x=$1
 fi
 
+#Exécution du choix
 case $x in
 	0)
 		#func=${f[$x]}"()"
@@ -50,15 +51,16 @@ case $x in
 		;;
 esac
 
+#Fonction d'erreur
 if [ $x = $err ]; then
 	echo $func
 else
-	#file=$home$doss${f[$x]}".js"
+	#Si le fichier finit en .js
 	if [[ $func =~ [*.js] ]]; then
 		echo $func
 		#~/order.sh "loadScript('"$file"');"$func";"
 	else
 		#func finit par .sh
-		$func
+		$file
 	fi
 fi
