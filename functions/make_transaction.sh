@@ -4,6 +4,8 @@
 home=$HOME
 doss="./functions"
 
+nb_acc=7
+
 #Si il n'y a pas d'argument, c'est l'utilisateur qui choisit via l'entrée standard
 if [ $# -eq 0 ]; then
 	
@@ -11,16 +13,30 @@ if [ $# -eq 0 ]; then
 	$doss/checkAllBalances.sh
 	
 	#Récupération des données
-	echo "Veuillez choisir un compte débiteur :"
-	read pc
-	echo "Veuillez choisir un compte crediteur :"
-	read dc
-	echo "Veuillez entrer la valeur à transférer :"
-        read val
+	#Variables initialisées pour le while
+	pc=-1
+	dc=-1
+	while [ $pc -eq $dc ] ; do
+		echo "hello"
+		while [ $pc -lt 0 ] || [ $pc -ge $nb_acc ] ; do
+			echo "Veuillez choisir un compte débiteur :"
+			read pc
+		done
+		while [ $dc -lt 0 ] || [ $dc -ge $nb_acc ] ; do
+			echo "Veuillez choisir un compte crediteur :"
+			read dc
+		done
+	done
+
+	val=0
+	while [ $val -le 0 ]; do
+		echo "Veuillez entrer la valeur à transférer :"
+        	read val
+	done
         echo "Veuillez entrer la money :"
         read money
 
-        pc="eth.accounts[$pc]"
+	pc="eth.accounts[$pc]"
 	dc="eth.accounts[$dc]"
 
 else
