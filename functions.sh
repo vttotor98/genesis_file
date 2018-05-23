@@ -24,34 +24,19 @@ else
 	x=$1
 fi
 
-#Exécution du choix
-case $x in
-	0)
-		file="./functions/${f[$x]}.sh"
-		;;
-	1)
-		file="./functions/${f[$x]}.sh"
-		;;
-	2)
-		file="./functions/${f[$x]}.sh"
-		;;
-	*)
-		x=$err
-		func="Désolé cette fonction n'est pas encore implémentée"
-		;;
-esac
+#Condition d'erreur
+if [ $x -lt ${#f[@]} ]; then
+	file="./functions/${f[$x]}.sh"
+else		
+	x=$err
+fi		
 
 #Fonction d'erreur
 if [ $x = $err ]; then
-	echo $func
+	echo "Désolé cette fonction n'est pas encore implémentée"
 else
-	#Si le fichier finit en .js
-	if [[ $file =~ [*.js] ]]; then
-		echo "Sera exécuté : ~/order.sh \"loadScript('$file');$func;\""
-		#~/order.sh "loadScript('$file');$func;"
-	else
-		#file finit par .sh
-		#$file
-		echo "Sera exécuté : $file"
-	fi
+	#if [[ $file =~ [*.js] ]];
+	#Exécution du choix
+	#$file
+	echo "Sera exécuté : $file"
 fi
