@@ -6,7 +6,5 @@ doss="/blockchain/functions"
 file=$home$doss"/checkAllBalances.js"
 func="checkAllBalances()"
 
-#echo $file
-#echo $func
-#echo $#
-~/order.sh "loadScript('"$file"');"$func";"
+#Exécution de l'ordre
+~/order.sh "loadScript('$file');$func;"

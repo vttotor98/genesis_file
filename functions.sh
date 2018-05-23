@@ -30,16 +30,10 @@ fi
 case $x in
 	0)
 		#func=${f[$x]}"()"
-		file="./functions/checkAllBalances.sh"
+		file="./functions/${f[$x]}.sh"
 		;;
 	1)
 		file="./functions/${f[$x]}.sh"
-		#echo ret
-		#t[0]="eth.accounts[${ret[0]}]"
-		#t[1]="eth.accounts[${ret[1]}]"
-		#t[2]='web3.toWei(${ret[2]},"${ret[3]}")'
-		#echo ${t[0]} ${t[1]} ${t[2]} ${t[3]} 
-		#func="eth.sendTransaction({from:${t[0]}, to:${t[1]}, value:${t[2]}})"
 		;;
 	2)
 		func=""
@@ -55,11 +49,12 @@ if [ $x = $err ]; then
 	echo $func
 else
 	#Si le fichier finit en .js
-	if [[ $func =~ [*.js] ]]; then
-		echo $func
-		#~/order.sh "loadScript('"$file"');"$func";"
+	if [[ $file =~ [*.js] ]]; then
+		echo 'Sera exécuté : "~/order.sh "loadScript(''"$file"'');$func;""'
+		#~/order.sh "loadScript('"$file"');$func;"
 	else
-		#func finit par .sh
-		$file
+		#file finit par .sh
+		#$file
+		echo "Sera exécuté : $file"
 	fi
 fi
