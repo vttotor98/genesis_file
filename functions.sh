@@ -9,9 +9,7 @@ err="Err"
 chmod +x function/*.sh
 
 #Les différentes fonctions existantes
-f[0]="checkAllBalances"
-f[1]="make_transaction"
-f[2]="addAccount"
+f=( "checkAllBalances" "make_transaction" "addAccount" )
 
 #Choix en fonction du fait que ce soit exécuter en script ou par un utilisateur
 if [ $# -eq 0 ]; then 
@@ -29,14 +27,13 @@ fi
 #Exécution du choix
 case $x in
 	0)
-		#func=${f[$x]}"()"
 		file="./functions/${f[$x]}.sh"
 		;;
 	1)
 		file="./functions/${f[$x]}.sh"
 		;;
 	2)
-		func=""
+		file="./functions/${f[$x]}.sh"
 		;;
 	*)
 		x=$err
@@ -50,8 +47,8 @@ if [ $x = $err ]; then
 else
 	#Si le fichier finit en .js
 	if [[ $file =~ [*.js] ]]; then
-		echo 'Sera exécuté : "~/order.sh "loadScript(''"$file"'');$func;""'
-		#~/order.sh "loadScript('"$file"');$func;"
+		echo "Sera exécuté : ~/order.sh \"loadScript('$file');$func;\""
+		#~/order.sh "loadScript('$file');$func;"
 	else
 		#file finit par .sh
 		#$file
