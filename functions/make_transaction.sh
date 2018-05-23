@@ -16,6 +16,7 @@ if [ $# -eq 0 ]; then
 	#Variables initialisées pour le while
 	pc=-1
 	dc=-1
+	val=0
 	while [ $pc -eq $dc ] ; do
 		echo "hello"
 		while [ $pc -lt 0 ] || [ $pc -ge $nb_acc ] ; do
@@ -27,8 +28,7 @@ if [ $# -eq 0 ]; then
 			read dc
 		done
 	done
-
-	val=0
+	
 	while [ $val -le 0 ]; do
 		echo "Veuillez entrer la valeur à transférer :"
         	read val
