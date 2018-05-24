@@ -1,9 +1,9 @@
-
 #!/bin/bash
 #Author Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
 #Démarage du premier noeuds, vérifier les paramètres
-fichier=.param_blch
+doss=~/blockchain/.ethereum_private/ACPrivateChain/
+fichier=$doss.param_blch
 #Est-ce que le fichier de paramètre existe, et est-il vide
 if [ ! -s $fichier ]; then
   #Comme il n'existe pas de fichier de paramètrage
