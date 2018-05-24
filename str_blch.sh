@@ -2,8 +2,7 @@
 #Author Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
 home="~/blockchain/"
-doss=$home".ethereum_private/ACPrivateChain/"
-fichier=$doss".param_blch"
+doss=$home".ethereum_private/"
 gl=$doss"geth.log"
 
 
@@ -12,16 +11,20 @@ gl=$doss"geth.log"
 if [ ! -s $fichier ]; then
 	#Comme il n'existe pas de fichier de paramètrage
 	#Nous le créons en demandant les paramètres à l'utilisateur
-	echo "Comment vous voulez appeller ce noeud ?"
+	echo "Comment voulez-vous appeller le dossier ?"
+	read nom_d
+	echo "Comment voulez-vous appeller ce noeud ?"
 	read node_name
 	echo "Quel sera l'idnetwork ?"
 	read idnet
 	
 	#Création du fichier $fichier
+	fichier=$doss$nom_d".param_blch"
 	touch "$fichier"
 	chmod 755 $fichier
-	echo $node_name >$fichier
-	echo $idnet >>$fichier
+	echo $nom_d > $fichier
+	echo $node_name >> $fichier
+	echo $idnet >> $fichier
 else
 	#Comme il existe nous récupérons les données
 	declare -a tab
