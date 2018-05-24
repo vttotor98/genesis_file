@@ -16,6 +16,7 @@ $os apt-get install -y software-properties-common
 $os apt-get install -y golang
 $os apt-get install -y ethereum
 $os apt-get install -y geth
+$os apt autoremove
 
 #Finalisation de l'installation et initialistation de la blockchain
 genesis_files/ether.sh
