@@ -25,7 +25,7 @@ else
 fi
 
 #Condition d'erreur
-if [ $x -lt ${#f[@]} ]; then
+if [ $x -lt ${#f[@]} ] && [ $x -ge 0 ]; then
 	file="./functions/${f[$x]}.sh"
 else		
 	x=$err
