@@ -9,32 +9,28 @@ sousdoss=$doss"functions/"
 #Création du dossier du fichier json 
 mkdir -p $gf
 
-tree 
+tree $home
 read
 
 cp $doss"genesis.json" $home"genesis_folder/"
 
-tree
+tree $home
 read
 
 #Copie du dossier contenant quelques fonctions
 cp $sousdoss $home
 
-tree
+tree $home
 read
 
 #Lors de l'exécution de la commande attention à l'id de la blockchain
 geth --datadir /blockchain/.ethereum_private init /blockchain/genesis_folder/genesis.json 
 
 #Déplacement des fichiers d'exécution dans blockchain
-
-tree
-read
-
 cp $doss"order.sh" $home
 cp $doss"start_blch.sh" $home
 
-tree
+tree $home
 read
 
 echo "Exécuter start_blch.sh pour démarrer la blockchain dans $home"
