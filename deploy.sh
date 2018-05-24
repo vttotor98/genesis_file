@@ -2,8 +2,9 @@
 #Author Victor TIREBAQUE for Agaetis
 
 home=$HOME
-depl="/blockchain/functions/deploy"
+depl="/blockchain/functions/deploy.js"
 
+#Fonction qui permet d'écrire le contrat
 function ins_depl() {
   echo $1 >> $depl
   echo $1
@@ -51,7 +52,7 @@ else
     read -s password
     echo
 
-    #Dépoiement du contrat
+    #Dépoiement du contrat, nous vidons le fichier où potentielement pourrait avoir gardé du code, et nous insérons chaque ligne dans le fichier deploy
     echo "" >$depl
     ins_depl "var myAccount = web3.eth.accounts["$account"];myAccount;"
     ins_depl "web3.personal.unlockAccount(myAccount,'$password',10000);"
