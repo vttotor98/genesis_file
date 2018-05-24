@@ -16,7 +16,5 @@ geth --datadir /blockchain/.ethereum_private init /blockchain/genesis_folder/gen
 cp /genesis_files/order.sh /blockchain
 cp /genesis_files/start_blch.sh /blockchain
 
-chmod +x /blockchain/*.sh
-
 echo "Exécuter start_blch.sh pour démarrer la blockchain dans blockchain"
 echo "Vous pouvez supprimer le dossier genesis_files"
