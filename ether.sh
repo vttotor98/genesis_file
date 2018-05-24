@@ -11,10 +11,8 @@ mkdir -p $gf
 
 cp $doss"genesis.json" $home"genesis_folder/"
 
-#Création du dossier avec quelques fonctions
-mkdir $home"functions"
-cp $sousdoss"*.js" $home"functions"
-cp $sousdoss"*.sh" $home"functions"
+#Copie du dossier contenant quelques fonctions
+cp $sousdoss $home
 
 #Lors de l'exécution de la commande attention à l'id de la blockchain
 geth --datadir /blockchain/.ethereum_private init /blockchain/genesis_folder/genesis.json 
