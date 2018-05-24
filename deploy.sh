@@ -39,7 +39,7 @@ else
 	#Choix du compte à partir duquel nous déployons le contrat
 	lof='log_deploy.log'
 	echo "" >$lof
-	~/order.sh "loadScript('"$home"/blockchain/functions/functions.js');checkAllBalances();" >> $lof
+	./functions/checkAllBalance.sh
 
 	#Si le fichier est vide, l'exécution du script sera possible
 	test=`tail -n 2 $lof | sed -n '1'p | cut -d " " -f 1`
@@ -63,7 +63,7 @@ else
 		ins_depl "var estimatedGas = web3.eth.estimateGas({data: binary});estimatedGas;"                                       
 		ins_depl "var addContractInstance = addContract.new({data: binary, from: myAccount, gas: estimatedGas});addContractInstance;"
 
-		~/order.sh "loadScript('"$home$depl"');"
+		~/order.sh "loadScript('"$home$depl"');" >>$lof
 
 	fi
 fi
