@@ -3,7 +3,7 @@
 
 home=~/blockchain/
 gf=$home"genesis_folder/"
-doss=./genesis_files/
+doss=genesis_files/
 sousdoss=$doss"functions/"
 
 #Création du dossier du fichier json 
