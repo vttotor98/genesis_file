@@ -1,21 +1,31 @@
 #!/bin/bash
 #Author Victor TIREBAQUE for Agaetis
 
-home=$HOME
-doss="/blockchain/functions"
+home=$HOME/blockchain
+doss=$home/functions
 err="Err"
 
 #Nous nous assurons que les fichiers sont bien exécutables
-chmod +x function/*.sh
+chmod +x $doss/*.sh
 
-#Les différentes fonctions existantes
-f=( "checkAllBalances" "make_transaction" "addAccount" "check_tx" )
+#Récupération des différentes fonctions existantes dans $doss
+j=0
+for i in `ls $doss`
+do
+	#Seules les fonctions *.sh conviennent
+	if [[ $i =~ .sh$ ]]; then
+		tmp=$i
+		f[$j]=${tmp%%.*}
+		j=`expr $j + 1`
+	fi 
+done
 
 #Choix en fonction du fait que ce soit exécuter en script ou par un utilisateur
 if [ $# -eq 0 ]; then 
 	echo "Quel fonction voulez-vous exécuter ?"
+	#Affichage des fonctions
 	for i in ${!f[*]}  
-		do
+	do
 		echo -n " $i : ${f[$i]},"
 	done
 	echo
@@ -26,7 +36,7 @@ fi
 
 #Condition d'erreur
 if [ $x -lt ${#f[@]} ] && [ $x -ge 0 ]; then
-	file="./functions/${f[$x]}.sh"
+	file="$doss/${f[$x]}.sh"
 else		
 	x=$err
 fi		
