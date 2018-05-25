@@ -22,7 +22,7 @@ req=request/
 echo $req
 echo $home
 
-#exe="cp $req* $home"
+exe="cp $req* $home"
 $exe
 
 echo "Exécuter start_blch.sh pour démarrer la blockchain dans $home"
