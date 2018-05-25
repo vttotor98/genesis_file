@@ -22,7 +22,7 @@ read
 geth --datadir /blockchain/.ethereum_private init /blockchain/genesis_folder/genesis.json 
 
 #Déplacement des fichiers d'exécution dans blockchain
-cp -R req $home
+cp -R $req $home
 
 echo "Exécuter start_blch.sh pour démarrer la blockchain dans $home"
 echo "Vous pouvez supprimer le dossier genesis_files"
