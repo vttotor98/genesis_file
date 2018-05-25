@@ -5,7 +5,7 @@ home=~/blockchain/
 gf=$home"genesis_folder/"
 doss=genesis_files/
 sousdoss=$doss"functions/"
-req="request/"
+req=$doss"request/"
 
 #Création du dossier de genèse 
 mkdir -p $gf
