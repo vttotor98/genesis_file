@@ -23,14 +23,17 @@ done
 #Choix en fonction du fait que ce soit exécuter en script ou par un utilisateur
 if [ $# -eq 0 ]; then 
 	echo "Quel fonction voulez-vous exécuter ?"
+
 	#Affichage des fonctions
 	for i in ${!f[*]}  
 	do
 		echo -n " $i : ${f[$i]},"
 	done
 	echo
+	
 	read x
 else
+	#Si un argument valide est passé en argument alors il sera exécuter
 	x=$1
 fi
 
