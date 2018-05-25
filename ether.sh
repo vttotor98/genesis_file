@@ -19,11 +19,6 @@ cp -R $sousdoss $home
 geth --datadir $home".ethereum_private" init $gf"genesis.json"
 
 #Déplacement des fichiers d'exécution dans blockchain
-echo $req
-echo $home
-pwd
-
-
 exe="cp $req* $home"
 $exe
 
