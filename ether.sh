@@ -5,22 +5,24 @@ home=~/blockchain/
 gf=$home"genesis_folder/"
 doss=genesis_files/
 sousdoss=$doss"functions/"
-req=request/
+req="request/"
 
 #Création du dossier de genèse 
-#mkdir -p $gf
+mkdir -p $gf
 
-#cp $doss"genesis.json" $gf
+cp $doss"genesis.json" $gf
 
 #Copie du dossier contenant quelques fonctions
-#cp -R $sousdoss $home
+cp -R $sousdoss $home
 
 #Lors de l'exécution de la commande attention à l'id de la blockchain
-#geth --datadir $home".ethereum_private" init $gf"genesis.json"
+geth --datadir $home".ethereum_private" init $gf"genesis.json"
 
 #Déplacement des fichiers d'exécution dans blockchain
 echo $req
 echo $home
+pwd
+
 
 exe="cp $req* $home"
 $exe
