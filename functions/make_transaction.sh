@@ -33,7 +33,7 @@ if [ $# -eq 0 ]; then
 		echo "Veuillez entrer la valeur à transférer :"
         	read val
 	done
-        echo "Veuillez entrer la money :"
+        echo "Veuillez entrer la money (Wei par défaut) :"
         read money
 
 	pc="eth.accounts[$pc]"
@@ -51,6 +51,10 @@ fi
 echo -n "Mot de passe de $pc:"
 read -s pass
 echo
+
+if [[ $money = "" ]]; then
+	money="wei"
+fi
 
 
 #Exécution 
