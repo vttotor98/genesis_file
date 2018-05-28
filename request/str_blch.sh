@@ -4,7 +4,7 @@
 home="~/blockchain/"
 doss=$home".ethereum_private/"
 gl=$doss"geth.log"
-
+fichier=$doss$nom_d".param_blch"
 
 #Démarage du premier noeuds, vérifier les paramètres
 #Est-ce que le fichier de paramètre existe, et est-il vide
@@ -19,7 +19,6 @@ if [ ! -s $fichier ]; then
 	read idnet
 	
 	#Création du fichier $fichier
-	fichier=$doss$nom_d".param_blch"
 	touch "$fichier"
 	chmod 755 $fichier
 	echo $nom_d > $fichier
