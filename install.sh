@@ -7,7 +7,8 @@ doss=genesis_files/
 sousdoss=$doss"functions/"
 req=$doss"request/"
 
-
+#Préparation de l'environnement 
+#Si l'installation se fait sur ubuntu, alors nous interprétons avec sudo
 if [ $1 = "ubuntu" ] ; then
 	os="sudo"
 else
