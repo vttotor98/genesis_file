@@ -48,6 +48,8 @@ geth --datadir $home".ethereum_private" init $gf"genesis.json"
 exe="cp $req* $home"
 $exe
 
+chmod -R +x $home
+
 echo "Exécuter start_blch.sh pour démarrer la blockchain dans $home"
 echo "Vous pouvez supprimer le dossier genesis_files"
 
