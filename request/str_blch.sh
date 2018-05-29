@@ -4,7 +4,7 @@
 home="~/blockchain/"
 doss=$home".ethereum_private/"
 gl=$doss"geth.log"
-fichier=$doss".param_blch"
+fichier="~/.param_blch"
 
 #Démarage du premier noeuds, vérifier les paramètres
 #Est-ce que le fichier de paramètre existe, et est-il vide
