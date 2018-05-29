@@ -54,6 +54,6 @@ str=$home"str_blch.sh"
 $str
 
 
-echo "Exécuter start_blch.sh pour démarrer la blockchain dans $home"
+echo "Exécuter strt_blch.sh pour démarrer la blockchain dans $home""strt_blch.sh"
 echo "Vous pouvez supprimer le dossier genesis_files"
 
