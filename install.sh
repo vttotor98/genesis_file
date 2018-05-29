@@ -41,8 +41,10 @@ cp $doss"genesis.json" $gf
 #Copie du dossier contenant quelques fonctions
 cp -R $sousdoss $home
 
-#Lors de l'exécution de la commande attention à l'id de la blockchain
-geth --datadir $home".ethereum_private" init $gf"genesis.json"
+#
+geth='geth --datadir '$home".ethereum_private"' init '$gf"genesis.json"
+echo $geth
+#$geth
 
 #Déplacement des fichiers d'exécution dans blockchain
 exe="cp $req* $home"
