@@ -51,8 +51,7 @@ $exe
 chmod -R +x $home
 
 str=$home"str_blch.sh"
-sudo su
-$str
+sudo su $str
 
 
 echo "Exécuter strt_blch.sh pour démarrer la blockchain dans $home""strt_blch.sh"
