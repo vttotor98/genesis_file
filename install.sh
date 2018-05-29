@@ -41,7 +41,7 @@ cp $doss"genesis.json" $gf
 #Copie du dossier contenant quelques fonctions
 cp -R $sousdoss $home
 
-#
+#GoEthereum se lance
 geth='geth --datadir '$home".ethereum_private"' init '$gf"genesis.json"
 echo $geth
 #$geth

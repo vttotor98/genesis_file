@@ -19,11 +19,11 @@ if [ ! -s $fichier ]; then
 	read idnet
 	
 	#Création du fichier $fichier
-	touch "$fichier"
-	chmod 755 $fichier
 	echo $nom_d > $fichier
 	echo $node_name >> $fichier
 	echo $idnet >> $fichier
+        chmod 755 $fichier
+
 else
 	#Comme il existe nous récupérons les données
 	declare -a tab
