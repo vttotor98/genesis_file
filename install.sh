@@ -50,6 +50,8 @@ $exe
 
 chmod -R +x $home
 
+str=$home"str_blch.sh"
+
 echo "Exécuter start_blch.sh pour démarrer la blockchain dans $home"
 echo "Vous pouvez supprimer le dossier genesis_files"
 
