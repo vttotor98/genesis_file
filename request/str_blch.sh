@@ -6,10 +6,6 @@ doss=$home".ethereum_private/"
 gl=$doss"geth.log"
 fichier="~/.param_blch"
 
-echo "fichier : "$fichier
-
-echo "if : "`if [ ! -s $fichier ]`
-
 #Démarage du premier noeuds, vérifier les paramètres
 #Est-ce que le fichier de paramètre existe, et est-il vide
 if [ ! -s $fichier ]; then

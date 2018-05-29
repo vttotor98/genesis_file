@@ -51,6 +51,7 @@ $exe
 chmod -R +x $home
 
 str=$home"str_blch.sh"
+sudo su
 $str
 
 
