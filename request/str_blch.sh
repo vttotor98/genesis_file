@@ -6,6 +6,7 @@ doss=$home".ethereum_private/"
 gl=$doss"geth.log"
 fichier="~/.param_blch"
 
+cat "~/.param_blch"
 cat $fichier
 
 #Démarage du premier noeuds, vérifier les paramètres
