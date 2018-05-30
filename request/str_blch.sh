@@ -6,6 +6,8 @@ doss=$home".ethereum_private/"
 gl=$doss"geth.log"
 fichier="~/.param_blch"
 
+cat $fichier
+
 #Démarage du premier noeuds, vérifier les paramètres
 #Est-ce que le fichier de paramètre existe, et est-il vide
 if [ ! -s $fichier ]; then
@@ -43,8 +45,8 @@ fi
 
 
 #Initialisation de démarrage et redirection du fichier nohup.out dans geth.log
-geth --identity $node_name init $doss/genesis_folder/genesis.json --datadir $datadir
-nohup geth --datadir $datadir --networkid $idnet --nodiscover &>>$gl &
+#geth --identity $node_name init $doss/genesis_folder/genesis.json --datadir $datadir
+#nohup geth --datadir $datadir --networkid $idnet --nodiscover &>>$gl &
 
 
 #Don des droits en lecture
