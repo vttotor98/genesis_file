@@ -1,7 +1,7 @@
 #!/bin/bash
 #Author : Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
-home=~/blockchain/
+home=/blockchain/
 gf=$home"genesis_folder/"
 doss=genesis_files/
 sousdoss=$doss"functions/"

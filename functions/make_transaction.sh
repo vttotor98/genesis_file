@@ -1,10 +1,10 @@
 #!/bin/bash
 #Author Victor TIREBAQUE for Agaetis
 
-home=$HOME
-doss="./functions"
+doss="/blockchain/functions"
 
-nb_acc=7
+#nb_acc=7
+nb_acc=`ls $doss | grep '.sh$' | wc -l`
 
 #Si il n'y a pas d'argument, c'est l'utilisateur qui choisit via l'entrée standard
 if [ $# -eq 0 ]; then

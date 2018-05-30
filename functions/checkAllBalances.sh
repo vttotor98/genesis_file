@@ -1,7 +1,7 @@
 #!/bin/bash
 #Author Victor TIREBAQUE for Agaetis
 
-home=$HOME
+home=""
 doss="/blockchain/functions"
 file=$home$doss"/checkAllBalances.js"
 func="checkAllBalances()"

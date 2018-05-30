@@ -1,7 +1,6 @@
 #!/bin/bash
 #Author Victor TIREBAQUE for Agaetis
 
-home=$HOME
 doss="/blockchain/functions"
 err="Err"
 
