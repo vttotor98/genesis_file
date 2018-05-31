@@ -1,9 +1,9 @@
 #!/bin/bash
 #Author : Victor TIREBAQUE for Agaetis Clermont-Ferrand
 
-home=/blockchain/
+home="/blockchain/"
 gf=$home"genesis_folder/"
-doss=genesis_files/
+doss="genesis_files/"
 sousdoss=$doss"functions/"
 req=$doss"request/"
 
@@ -30,9 +30,7 @@ if [ $1 = "ubuntu" ]; then
 fi
 
 
-#Finalisation de l'installation et initialistation de la blockchain
-#genesis_files/ether.sh
-
+#Finalisation de l'installation de la blockchain
 #Création du dossier de genèse 
 mkdir -p $gf
 
@@ -41,6 +39,7 @@ cp $doss"genesis.json" $gf
 #Copie du dossier contenant quelques fonctions
 cp -R $sousdoss $home
 
+#Initialistation de la blockchain
 #GoEthereum se lance
 geth='geth --datadir '$home".ethereum_private"' init '$gf"genesis.json"
 echo $geth
@@ -50,7 +49,7 @@ echo $geth
 exe="cp $req* $home"
 $exe
 
-chmod -R +x $home
+#chmod -R +x $home
 
 str=$home"str_blch.sh"
 $str
