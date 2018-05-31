@@ -47,7 +47,7 @@ fi
 
 #Initialisation de démarrage et redirection du fichier nohup.out dans geth.log
 #geth --identity $node_name init $doss/genesis_folder/genesis.json --datadir $datadir
-#nohup geth --datadir $datadir --networkid $idnet --nodiscover &>>$gl &
+#nohup geth --datadir $datadir --networkid $idnet --nodiscover >>$gl &
 
 
 #Don des droits en lecture
