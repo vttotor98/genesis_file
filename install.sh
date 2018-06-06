@@ -24,6 +24,7 @@ $os apt-get install -y software-properties-common
 $os apt-get install -y golang
 $os apt-get install -y ethereum
 $os apt-get install -y geth
+$os apt-get install -y solc
 
 if [ $1 = "ubuntu" ]; then
 	$os apt autoremove -y
