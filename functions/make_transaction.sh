@@ -41,10 +41,20 @@ if [ $# -eq 0 ]; then
 
 else
 	#Sinon il l'utilise via des arguments
-	pc="eth.accounts[$1]"
-	dc="eth.accounts[$2]"
+	if [[ $1 =~ ^0x[a-z|0-9|A-Z]* ]]; then
+		pc=$1
+	else
+		pc="eth.accounts[$1]"
+	fi
+	if [[ $2 =~ ^0x[a-z|0-9|A-Z]* ]]; then 
+		dc=$2
+	else
+		dc="eth.accounts[$1]"
+	fi
+	
 	val="$3"
 	money="$4"
+	
 fi
 
 #Demande de mot de passe
